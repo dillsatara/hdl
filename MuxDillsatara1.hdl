@@ -1,0 +1,19 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/demo/Xor.hdl
+
+
+CHIP Mux {
+    IN a, b , Sel;
+    OUT out;
+
+    PARTS:
+    Not (in=Sel, out=nSel);
+    And (a=Sel, b=b, out=x);
+	And	(a=nSel, b=a, out=y)
+    Or (a=x, b=y, out=out);
+	
+	
+	
+}
