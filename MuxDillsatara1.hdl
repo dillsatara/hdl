@@ -4,16 +4,13 @@
 // File name: projects/demo/Xor.hdl
 
 
-CHIP Mux {
+CHIP MuxDillsatara1{
     IN a, b , Sel;
     OUT out;
 
     PARTS:
     Not (in=Sel, out=nSel);
     And (a=Sel, b=b, out=x);
-	And	(a=nSel, b=a, out=y)
-    Or (a=x, b=y, out=out);
-	
-	
-	
+    And (a=nSel, b=a, out=y);
+    Or (a=x, b=y, out=out);	
 }
