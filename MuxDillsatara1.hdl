@@ -9,8 +9,8 @@ CHIP MuxDillsatara1{
     OUT out;
 
     PARTS:
-    Not (in=Sel, out=nSel);
-    And (a=Sel, b=b, out=x);
-    And (a=nSel, b=a, out=y);
-    Or (a=x, b=y, out=out);	
+    Nand(a=sel, b=sel, out=aa);
+    Nand(a=a, b=aa, out=bb);
+    Nand(a=sel, b=b, out=cc);
+    Nand(a=bb, b=cc, out=out);
 }
